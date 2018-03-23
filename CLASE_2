@@ -1,0 +1,38 @@
+Sub binomial()
+
+Range("B4:Z200") = ClearContents
+MsgBox ("Introduzca los par‡metros de la distribuci—n")
+n = InputBox("Introduzca el par‡metro n", "Distribuci—n Binomial")
+p = InputBox("Introduzca el par‡metro p", "Distribuci—n Binomial")
+'n = 3
+'p = 0.5
+fila = 2
+Columna = 2
+Cells(fila, Columna) = "X~Bin(" & n & "," & p & ")"
+Cells(fila + 1, Columna) = "X"
+Cells(fila + 1, Columna + 1) = "f(x)"
+Cells(fila + 1, Columna + 2) = "F(x)"
+
+Cells(fila + 1, Columna + 4) = "E(x)"
+Cells(fila + 1, Columna + 5) = n * p
+Cells(fila + 2, Columna + 4) = "V(x)"
+Cells(fila + 2, Columna + 5) = n * p * (1 - p)
+Cells(fila + 3, Columna + 4) = "SD"
+Cells(fila + 3, Columna + 5) = Sqr(n * p * (1 - p))
+'Recursi—n
+
+cero = (1 - p) ^ n
+a = (-p / (1 - p))
+b = p * (n + 1) / (1 - p)
+Cells(fila + 2, Columna) = 0
+Cells(fila + 2, Columna + 1) = cero
+Cells(fila + 2, Columna + 2) = cero
+
+For i = 1 To n
+Cells(fila + 2 + i, Columna) = i
+Cells(fila + 2 + i, Columna + 1) = (a + b / i) * Cells(fila + 1 + i, Columna + 1)
+Cells(fila + 2 + i, Columna + 2) = Cells(fila + 1 + i, Columna + 2) + Cells(fila + 2 + i, Columna + 1)
+Next i
+
+
+End Sub
