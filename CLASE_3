@@ -1,0 +1,51 @@
+Sub select_case()
+
+valor = Rnd * 100 'numero aleatorio
+Cells(2, 2) = valor
+
+'Select Case valor
+
+'Case 30 To 50
+'Cells(3, 2) = "EL VALOR ESTA ENTRE 30 Y 50"
+
+'Case Is <= 50
+'Cells(3, 2) = " EL VALOR ES MENOR A 50"
+
+'Case 51 To 80
+'Cells(3, 2) = " EL VALOR ESTA ENTRE 51 Y 80"
+
+'Case Else
+'Cells(3, 2) = "EL VALOR ES MAYOR A 80"
+
+
+'End Select
+
+If valor > 30 And valor < 50 Then
+Cells(4, 2) = " VALOR ENTRE 30 Y 50 CON CASO IF"
+Else
+    If valor <= 50 Then
+    Cells(4, 2) = " EL VALOR ES MENOR A 50"
+    Else
+        If valor > 51 And valor < 80 Then
+        Cells(4, 2) = " EL VALOR ESTA ENTRE 51 Y 80"
+        Else
+            If valor > 80 Then
+            Cells(4, 2) = "EL VALOR ES MAYOR A 80"
+            Else
+            End If
+        End If
+    End If
+End If
+
+
+' tarea
+' macro que devuelva valores de distribucion que regrese probabilidades desde 0
+' hasta valor
+' con fn . fn. acumulada, esperanza y varianza
+
+' checar salto de linea
+
+' que pregunte distribucion y parametros
+
+
+End Sub
