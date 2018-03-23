@@ -1,0 +1,64 @@
+Sub ejemplo()
+'Range("A1") = "RANGO"
+'Range("A3:D5") = "RANGO DESDE HASTA"
+'Cells(7, 1) = "RANGO CON COLUMNAS"
+'Cells(7, 1) = Clear
+'COMENTARIOS
+End Sub
+
+Sub EJEMPLO1()
+Dim cliente As String
+Dim tasa As Double
+Dim monto As Double
+monto = 50
+tasa = 0.01
+    Range("a5") = "AÑO"
+    Range("b5") = "MONTO INICIAL"
+    Range("C5") = "INTERESES GANADOS"
+    Range("D5") = "MONTO+INTERES"
+    Range("b3") = "MONTO"
+    Range("b2") = "TASA"
+    Range("B1") = "CLIENTE"
+        cliente = "DANY"
+    Range("c1") = cliente
+    Range("C2") = tasa
+    Range("c3") = monto
+    Range("a6") = 1
+    Range("a7") = 2
+        Range("b6") = monto
+        Range("C6") = tasa * monto
+        Range("d6") = Range("b6") + Range("c6")
+        Range("b7") = monto + Range("d6")
+        Range("C7") = Range("b7") * tasa
+        Range("d7") = Range("b7") + Range("c7")
+        Range("c9") = "SALDO PROMEDIO"
+        Range("D9") = Application.WorksheetFunction.Average(Range("d6:d7"))
+End Sub
+Sub ejemplo2()
+Range("b12") = "X"
+Range("c12") = "f(x)"
+Range("a12") = "PARAMETRO"
+Range("d12") = "E[x]"
+Range("e12") = "x2"
+Range("f12") = "v[x]"
+Range("b13") = 0
+Range("b14") = 1
+Range("b15") = 2
+Range("b16") = 3
+Range("C13") = ((Range("A13") ^ Range("B13")) * (Exp(-Range("a13")))) / (Application.WorksheetFunction.Fact(Range("b13")))
+Range("C14") = ((Range("A13") ^ Range("B14")) * (Exp(-Range("a13")))) / (Application.WorksheetFunction.Fact(Range("b14")))
+Range("C15") = ((Range("A13") ^ Range("B15")) * (Exp(-Range("a13")))) / (Application.WorksheetFunction.Fact(Range("b15")))
+Range("C16") = ((Range("A13") ^ Range("B16")) * (Exp(-Range("a13")))) / (Application.WorksheetFunction.Fact(Range("b16")))
+Range("c18") = "SUMA"
+Range("e13") = Range("b13") * Range("b13")
+Range("e14") = Range("b14") * Range("b14")
+Range("e15") = Range("b15") * Range("b15")
+Range("e16") = Range("b16") * Range("b16")
+
+Range("f13") = Range("e13") * Range("c13")
+Range("f14") = Range("e14") * Range("c14")
+Range("f15") = Range("e15") * Range("c15")
+Range("f16") = Range("e16") * Range("c16")
+Range("D18") = Application.WorksheetFunction.SumProduct(Range("b13:b16"), Range("c13:c16"))
+Range("f18") = Application.WorksheetFunction.SumProduct(Range("e13:e16"), Range("f13:f16"))
+End Sub
